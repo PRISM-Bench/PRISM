@@ -1,0 +1,9 @@
+id: PRISM-49
+name: The Kanban Card Move
+category: Peak Complexity & Multi-Step Logic
+difficulty: Extreme
+summary: A project tracking page where a ticket needs to reach Done.
+goal:
+  - Drag the ticket card from To Do to Done.
+success_signal: A confirmation that the card reached Done is shown.
+screenshot: docs/screenshots/PRISM-49.png

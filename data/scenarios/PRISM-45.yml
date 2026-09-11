@@ -1,0 +1,9 @@
+id: PRISM-45
+name: The Purchase Confirmation
+category: Affective & Cognitive Load
+difficulty: High
+summary: An order-review page showing a product photo and a button confirming the order.
+goal:
+  - Confirm the order.
+success_signal: A confirmation that the order succeeded is shown.
+screenshot: docs/screenshots/PRISM-45.png

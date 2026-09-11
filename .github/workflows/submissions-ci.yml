@@ -1,0 +1,41 @@
+name: submissions-ci
+
+# CI gate for the submission contract (submissions/ + scripts/validate_submission.py).
+# Not path-filtered — like the other three, it runs on every PR so a required
+# check is never skipped, and so a scenario added under data/scenarios/ cannot
+# silently put every full-scope entry out of contract without anyone noticing.
+#
+# This workflow also ships to the public repo. It is NOT a gate on vendor
+# submissions: those arrive privately and the operator validates them at intake,
+# off GitHub entirely. What it guards there is the reference entry that ships,
+# and the binding between CONTRACT.md's [checked] rules and the validator's
+# registered checks. Static shape only: it never executes a submitted
+# run.command.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Read-only token: nothing here writes to the repo, and the public copy runs
+# under whatever default that repo carries. Declared, not inherited.
+permissions:
+  contents: read
+
+jobs:
+  submissions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: scripts/requirements-dev.txt
+      - run: pip install -r scripts/requirements-dev.txt
+
+      # The validator's own tests, plus the drift test binding CONTRACT.md's
+      # [checked] rules to the registered checks.
+      - run: python -m pytest scripts/tests/test_validate_submission.py scripts/tests/test_contract_doc.py
+
+      # Every entry under submissions/ must satisfy the contract it publishes.
+      - run: python -m scripts.validate_submission --all

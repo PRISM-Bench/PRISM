@@ -1,0 +1,106 @@
+name: Scenario proposal
+description: Propose a perceptual failure PRISM does not yet cover
+title: '[Scenario] '
+labels: ['scenario-proposal']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing one. A few things worth knowing before you fill this in,
+        because they change what a useful proposal looks like.
+
+        **You cannot implement it, and that is by design.** A scenario is a page in a
+        sandbox that is never published, so an accepted proposal is built operator-side.
+        What we need from you is the *observation* — the failure you have actually hit —
+        not code.
+
+        **Accepted proposals land at a round boundary, not immediately.** The scenario
+        set is frozen within a quarter: a ranked round scores the set as it stood when
+        that round opened, so an accepted scenario joins at the next boundary rather
+        than mid-round.
+
+        **This is not how you submit a framework.** See
+        [`submissions/README.md`](https://github.com/PRISM-Bench/PRISM/blob/main/submissions/README.md)
+        for that — entries arrive through a private intake form, not through this tracker.
+
+  - type: textarea
+    id: gap
+    attributes:
+      label: The perceptual gap
+      description: >-
+        What does a human see that a DOM query does not — or the reverse? This is the
+        whole substance of a PRISM scenario, so be concrete about both halves.
+      placeholder: >-
+        The button is present in the DOM and reports as visible and enabled, but a
+        transparent overlay from the cookie banner covers it, so a real click never
+        reaches it. A human sees the banner and dismisses it first.
+    validations:
+      required: true
+
+  - type: textarea
+    id: wild
+    attributes:
+      label: Where you hit this
+      description: >-
+        Real application, library, or framework version. A public link or a reduced
+        reproduction helps most. "I have seen this a lot" is much weaker evidence than
+        one case you can point at.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Closest category
+      description: >-
+        The ten categories in the current taxonomy. Pick the nearest fit — if nothing
+        fits, say so, since a genuinely new category is interesting in itself.
+      options:
+        - Hydration & Timing Gap
+        - Lying DOM
+        - Non-Deterministic & Generative UI
+        - Visual Occlusion & Layout Shifts
+        - Canvas & WebGL Blind Spot
+        - React State & Race Conditions
+        - Dynamic Data & Network Artifacts
+        - Accessibility & Shadow DOM
+        - Affective & Cognitive Load
+        - Peak Complexity & Multi-Step
+        - None of these — a new category
+    validations:
+      required: true
+
+  - type: textarea
+    id: coverage
+    attributes:
+      label: Why the existing 50 do not cover it
+      description: >-
+        Skim [`data/scenarios/`](https://github.com/PRISM-Bench/PRISM/tree/main/data/scenarios)
+        first — each spec carries a goal and a success signal. Name the nearest existing
+        scenario and say what your case does that it does not.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-answer
+    attributes:
+      label: What should a framework do here?
+      description: >-
+        Optional, but it sharpens the proposal. Is there a path a perceptive system
+        should complete — or is the honest answer to report failure? PRISM deliberately
+        includes scenarios that cannot be completed, where claiming a pass is a False
+        Heal, so "no correct completion exists" is a legitimate and useful answer.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Before you submit
+      options:
+        - label: I have looked through the existing scenario specs in `data/scenarios/`
+          required: true
+        - label: >-
+            I understand that implementation happens operator-side in a private sandbox,
+            and that I am proposing an observation rather than contributing code
+          required: true

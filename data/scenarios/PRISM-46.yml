@@ -1,0 +1,9 @@
+id: PRISM-46
+name: The Catalog Checkout
+category: Peak Complexity & Multi-Step Logic
+difficulty: Extreme
+summary: A catalog page where picking something starts a multi-step process ending in a purchase.
+goal:
+  - Pick something from the catalog and buy it.
+success_signal: A confirmation that the purchase succeeded is shown.
+screenshot: docs/screenshots/PRISM-46.png

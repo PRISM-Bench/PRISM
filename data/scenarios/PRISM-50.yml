@@ -1,0 +1,9 @@
+id: PRISM-50
+name: The User Removal
+category: Peak Complexity & Multi-Step Logic
+difficulty: Extreme
+summary: A user management page with an action to remove the account.
+goal:
+  - Delete the user.
+success_signal: A confirmation that the user was deleted is shown.
+screenshot: docs/screenshots/PRISM-50.png

@@ -1,0 +1,9 @@
+id: PRISM-03
+name: The Booking Confirmation
+category: Hydration & Timing Gap
+difficulty: Medium
+summary: A booking page showing the reservation details, with a control to confirm it.
+goal:
+  - Confirm the booking.
+success_signal: A confirmation that the booking succeeded is shown.
+screenshot: docs/screenshots/PRISM-03.png

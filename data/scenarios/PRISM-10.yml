@@ -1,0 +1,9 @@
+id: PRISM-10
+name: The Report Acknowledgement
+category: Lying DOM
+difficulty: High
+summary: A long report page whose acknowledgement button sits further down the page.
+goal:
+  - Acknowledge the report.
+success_signal: A confirmation that the report was acknowledged is shown.
+screenshot: docs/screenshots/PRISM-10.png

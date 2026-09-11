@@ -1,0 +1,9 @@
+id: PRISM-27
+name: The Post Reaction
+category: React-Specific State & Race Conditions
+difficulty: Medium
+summary: A social post with a Like control showing whether you have already reacted.
+goal:
+  - Like the post.
+success_signal: The post is shown as liked.
+screenshot: docs/screenshots/PRISM-27.png

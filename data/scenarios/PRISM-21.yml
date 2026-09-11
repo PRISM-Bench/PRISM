@@ -1,0 +1,9 @@
+id: PRISM-21
+name: The Stock Price Peak
+category: Canvas & WebGL Blind Spot
+difficulty: High
+summary: A page that plots stock prices on a graph and asks you to select the top of it.
+goal:
+  - Select the highest point on the chart.
+success_signal: A confirmation that the selection succeeded is shown.
+screenshot: docs/screenshots/PRISM-21.png

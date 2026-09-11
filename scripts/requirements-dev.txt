@@ -1,0 +1,10 @@
+# Dev/test dependencies for the repo tooling under scripts/ that ships to the
+# public repo: the submission validator and its tests. PyYAML is the runtime
+# dep (metadata.yaml parsing); pytest is the runner.
+#
+# scripts/public_specs/requirements-dev.txt is the same two lines for the
+# lean-spec generator, which does NOT ship. Kept separate on purpose: the
+# generator reads the private full specs, so its dependency file living at a
+# path that ships would invite the generator to follow it.
+PyYAML>=6.0
+pytest>=8

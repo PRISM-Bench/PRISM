@@ -1,0 +1,9 @@
+id: PRISM-30
+name: The Order Placement
+category: React-Specific State & Race Conditions
+difficulty: Extreme
+summary: An order review page listing the items and total for an order you then place.
+goal:
+  - Place the order.
+success_signal: A confirmation that the order was placed is shown.
+screenshot: docs/screenshots/PRISM-30.png

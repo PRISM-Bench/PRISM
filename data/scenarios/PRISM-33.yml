@@ -1,0 +1,9 @@
+id: PRISM-33
+name: The Refund Approval
+category: Dynamic Data & Network Artifacts
+difficulty: High
+summary: A refund approval page listing orders that are awaiting a decision.
+goal:
+  - Approve the refund for the order requested on the page.
+success_signal: A confirmation that the refund was approved is shown.
+screenshot: docs/screenshots/PRISM-33.png

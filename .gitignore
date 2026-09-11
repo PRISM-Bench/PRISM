@@ -1,0 +1,6 @@
+# The public repo runs pytest in CI and invites contributors to run it
+# locally (see CLAUDE.md and evaluators/pytest.ini) — nothing else here
+# stops these artefacts landing in a PR.
+__pycache__/
+*.py[cod]
+.pytest_cache/

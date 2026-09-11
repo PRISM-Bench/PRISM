@@ -1,0 +1,11 @@
+id: PRISM-05
+name: The Card Payment
+category: Hydration & Timing Gap
+difficulty: High
+summary: A card checkout page that collects the details below and confirms the order.
+goal:
+  - Pay for the order using the details below.
+inputs:
+  card_number: '4242 4242 4242 4242'
+success_signal: A confirmation that the payment succeeded is shown.
+screenshot: docs/screenshots/PRISM-05.png

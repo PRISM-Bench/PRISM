@@ -1,0 +1,9 @@
+id: PRISM-09
+name: The Room Booking
+category: Lying DOM
+difficulty: Medium
+summary: A room booking page that opens a confirmation window to complete the reservation.
+goal:
+  - Confirm the booking.
+success_signal: A confirmation that the booking was placed is shown.
+screenshot: docs/screenshots/PRISM-09.png

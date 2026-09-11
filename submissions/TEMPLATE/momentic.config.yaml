@@ -1,0 +1,20 @@
+# The runner's own configuration file. This one is Momentic's, as a concrete
+# example — see momentic.ai/docs/cli/configuration. Your framework's config
+# goes here instead, whatever shape it takes.
+#
+# The one part that is not framework-specific: the base URL is read from
+# PRISM_SANDBOX_URL at run time. The sandbox address is assigned per run and is
+# never written into an entry.
+name: prism-submission
+include:
+  - '**/*.test.yaml'
+  - '**/*.module.yaml'
+# Retries off. A pass reached by re-running a failed test is the False Heal the
+# benchmark exists to count; see submissions/RANKED.md.
+retries: 0
+parallel: 1
+recordVideo: on-fail
+fileFormat: v2
+environments:
+  - name: web
+    baseUrl: ${PRISM_SANDBOX_URL}

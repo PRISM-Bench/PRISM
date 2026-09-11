@@ -1,0 +1,9 @@
+id: PRISM-44
+name: The Report Generation
+category: Affective & Cognitive Load
+difficulty: High
+summary: A report-generation page with a completion percentage, a running count of records handled, and a button to view the finished report.
+goal:
+  - View the report.
+success_signal: A confirmation that the report was generated is shown.
+screenshot: docs/screenshots/PRISM-44.png

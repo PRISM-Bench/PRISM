@@ -1,0 +1,9 @@
+id: PRISM-07
+name: The Trial Signup
+category: Lying DOM
+difficulty: Medium
+summary: A trial account page where a new account can be created.
+goal:
+  - Create an account.
+success_signal: A confirmation that the account was created is shown.
+screenshot: docs/screenshots/PRISM-07.png

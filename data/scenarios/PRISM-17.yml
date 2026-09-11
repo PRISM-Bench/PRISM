@@ -1,0 +1,9 @@
+id: PRISM-17
+name: The Order Review
+category: Visual Occlusion & Layout Shifts
+difficulty: Medium
+summary: An order review page listing the order for you to confirm.
+goal:
+  - Confirm the order.
+success_signal: A confirmation that the order succeeded is shown.
+screenshot: docs/screenshots/PRISM-17.png

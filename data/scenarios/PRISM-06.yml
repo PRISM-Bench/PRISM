@@ -1,0 +1,9 @@
+id: PRISM-06
+name: The Order Confirmation
+category: Lying DOM
+difficulty: Medium
+summary: An order confirmation page listing the order, with a Confirm button.
+goal:
+  - Confirm the order.
+success_signal: A confirmation that the order was confirmed is shown.
+screenshot: docs/screenshots/PRISM-06.png

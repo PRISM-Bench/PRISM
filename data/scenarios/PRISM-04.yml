@@ -1,0 +1,11 @@
+id: PRISM-04
+name: The Email Confirmation
+category: Hydration & Timing Gap
+difficulty: High
+summary: A short sign-up step with a text box for an email address and an action to confirm it.
+goal:
+  - Enter the email address below and confirm it.
+inputs:
+  email: tester@example.com
+success_signal: A confirmation that the submission succeeded is shown.
+screenshot: docs/screenshots/PRISM-04.png

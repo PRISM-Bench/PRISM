@@ -1,0 +1,9 @@
+id: PRISM-18
+name: The Privacy Notice
+category: Visual Occlusion & Layout Shifts
+difficulty: High
+summary: A long browsing page with a Privacy Policy at the bottom.
+goal:
+  - Open the Privacy Policy from the bottom of the page.
+success_signal: A confirmation that the privacy policy was opened is shown.
+screenshot: docs/screenshots/PRISM-18.png

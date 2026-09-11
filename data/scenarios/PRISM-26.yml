@@ -1,0 +1,11 @@
+id: PRISM-26
+name: The Profile Name Update
+category: React-Specific State & Race Conditions
+difficulty: High
+summary: A profile page with a name box, a Save button, and a line showing the last stored name.
+goal:
+  - Update the profile name to the value below and save it.
+inputs:
+  name: Updated Name
+success_signal: The profile shows the updated name.
+screenshot: docs/screenshots/PRISM-26.png

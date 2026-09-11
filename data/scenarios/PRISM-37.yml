@@ -1,0 +1,9 @@
+id: PRISM-37
+name: The Help Request
+category: Accessibility & Shadow DOM Obstructions
+difficulty: Medium
+summary: An account overview summarizing recent activity, with help available on the page.
+goal:
+  - Open the help.
+success_signal: The help content is shown.
+screenshot: docs/screenshots/PRISM-37.png

@@ -1,0 +1,9 @@
+id: PRISM-14
+name: The Order Cancellation
+category: Non-Deterministic & Generative UI
+difficulty: High
+summary: A chat-style order assistant that can cancel the order it is showing.
+goal:
+  - Cancel the order the assistant is showing.
+success_signal: A confirmation that the order was cancelled is shown.
+screenshot: docs/screenshots/PRISM-14.png

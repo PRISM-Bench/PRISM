@@ -1,0 +1,41 @@
+# The metadata contract, filled in. Copy this directory, rename this file to
+# `metadata.yaml`, and replace the values. `submissions/CONTRACT.md` is the
+# authority on every key; the comments here only say what the example is doing.
+#
+# The name is `metadata.example.yaml`, not `metadata.yaml`, on purpose:
+# `scripts/validate_submission.py` discovers an entry by globbing
+# `metadata.yaml`, and this template ships no test files — a discoverable copy
+# would fail `scenario_coverage` with all 50 scenarios missing.
+#
+# `contact` is where the operator writes when a run raises a question. Give an
+# address a human reads. It carries no URL deliberately: the
+# `declared_hosts_only` check scans every non-Markdown file in an entry for
+# `http(s)://` hosts, and a link here would read as a host your run contacts.
+framework: your-framework
+version: '2026-Q3'
+contact: you@example.com
+submission_date: 2026-01-01
+
+# `full` is the only scope. A ranked round covers all 50 scenarios.
+scope: full
+
+# Must resolve to exactly 50 files, one per scenario. The `prism-NN` token in
+# each filename is how a JUnit testcase is mapped back to a scenario — see the
+# naming convention in this directory's README.
+tests:
+  glob: web/prism-*.test.yaml
+
+# `setup` is optional; `command` and `results` are required. Every path stays
+# inside the entry — no absolute paths, no `..`. The operator runs these; they
+# must need nothing that is not declared here.
+run:
+  setup: npm install && npx your-framework install-browsers chromium
+  command: npx your-framework run --env web --reporter junit --reporter-dir reports
+  results: reports/*.xml
+
+# Every host the run contacts, declared up front. Use `[]` to declare none.
+# The sandbox's own address is not listed: it arrives at runtime in
+# PRISM_SANDBOX_URL and is never written into an entry.
+network:
+  allowlist:
+    - api.your-framework.example

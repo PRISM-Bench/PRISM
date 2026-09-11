@@ -1,0 +1,9 @@
+id: PRISM-13
+name: The Accessories Order
+category: Non-Deterministic & Generative UI
+difficulty: Medium
+summary: An accessories order page that reviews the order and places it below.
+goal:
+  - Review the order and place it.
+success_signal: A confirmation that the order succeeded is shown.
+screenshot: docs/screenshots/PRISM-13.png

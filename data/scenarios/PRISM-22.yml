@@ -1,0 +1,9 @@
+id: PRISM-22
+name: The Seat Selection
+category: Canvas & WebGL Blind Spot
+difficulty: High
+summary: A seat-selection page where you pick one seat and confirm it.
+goal:
+  - Pick a seat for the event and confirm it.
+success_signal: A confirmation that the seat was reserved is shown.
+screenshot: docs/screenshots/PRISM-22.png

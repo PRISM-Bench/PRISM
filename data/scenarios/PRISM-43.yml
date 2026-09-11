@@ -1,0 +1,12 @@
+id: PRISM-43
+name: The Billing Details
+category: Affective & Cognitive Load
+difficulty: Medium
+summary: A checkout page where you fill in card details before placing an order.
+goal:
+  - Fill in the card details below and place the order.
+inputs:
+  card_number: '4242 4242 4242 4242'
+  name_on_card: Ada Lovelace
+success_signal: A confirmation that the order was placed is shown.
+screenshot: docs/screenshots/PRISM-43.png

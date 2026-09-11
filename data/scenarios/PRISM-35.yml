@@ -1,0 +1,9 @@
+id: PRISM-35
+name: The Article Publication
+category: Dynamic Data & Network Artifacts
+difficulty: Medium
+summary: An article draft page with a Publish button.
+goal:
+  - Publish the article.
+success_signal: A confirmation that the article was published is shown.
+screenshot: docs/screenshots/PRISM-35.png

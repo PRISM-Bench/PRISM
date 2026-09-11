@@ -1,0 +1,9 @@
+id: PRISM-19
+name: The Summary Review
+category: Visual Occlusion & Layout Shifts
+difficulty: High
+summary: A summary review page showing the details to review, with a Continue button.
+goal:
+  - Review the summary, then continue.
+success_signal: A confirmation that the action succeeded is shown.
+screenshot: docs/screenshots/PRISM-19.png

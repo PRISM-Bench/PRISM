@@ -1,0 +1,9 @@
+id: PRISM-41
+name: The Metrics Export
+category: Affective & Cognitive Load
+difficulty: High
+summary: A dashboard summarizing session, conversion and revenue metrics, with a button to export the report.
+goal:
+  - Export the report.
+success_signal: A confirmation that the export succeeded is shown.
+screenshot: docs/screenshots/PRISM-41.png

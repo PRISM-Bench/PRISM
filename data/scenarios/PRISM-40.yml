@@ -1,0 +1,9 @@
+id: PRISM-40
+name: The Session Resume
+category: Accessibility & Shadow DOM Obstructions
+difficulty: High
+summary: A page that lets you resume a previous session after confirming a prompt.
+goal:
+  - Resume the session, confirming the prompt that appears.
+success_signal: A confirmation that the session was resumed is shown.
+screenshot: docs/screenshots/PRISM-40.png

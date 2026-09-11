@@ -1,0 +1,9 @@
+id: PRISM-23
+name: The Logo Placement
+category: Canvas & WebGL Blind Spot
+difficulty: Extreme
+summary: A page that lets you drag a logo into the zone the page requests.
+goal:
+  - Drag the logo to the requested zone.
+success_signal: A confirmation that the logo landed in the right zone is shown.
+screenshot: docs/screenshots/PRISM-23.png

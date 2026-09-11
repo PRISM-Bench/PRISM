@@ -1,0 +1,15 @@
+id: PRISM-32
+name: The Profile Details Entry
+category: Dynamic Data & Network Artifacts
+difficulty: High
+summary: A multi-part profile page that collects your details across a few stages.
+goal:
+  - Enter the profile details below, moving through each stage.
+  - Save the profile.
+inputs:
+  name: Ada Lovelace
+  email: ada.lovelace@example.com
+  phone: '+1 555 0142'
+  location: London
+success_signal: The confirmation shows the name "Ada Lovelace".
+screenshot: docs/screenshots/PRISM-32.png

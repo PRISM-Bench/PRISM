@@ -1,0 +1,9 @@
+id: PRISM-29
+name: The Appointment Reschedule
+category: React-Specific State & Race Conditions
+difficulty: Medium
+summary: An appointment page with a list of times to choose from, followed by a confirmation stage.
+goal:
+  - Set the appointment to the time slot the page names, then confirm it.
+success_signal: A confirmation that the appointment was rescheduled is shown.
+screenshot: docs/screenshots/PRISM-29.png

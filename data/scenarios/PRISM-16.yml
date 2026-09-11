@@ -1,0 +1,9 @@
+id: PRISM-16
+name: The Account Settings Edit
+category: Visual Occlusion & Layout Shifts
+difficulty: Medium
+summary: An account settings page with a list of rows, one of which can be edited.
+goal:
+  - Open the Edit control on the account settings row that has one.
+success_signal: A confirmation that the action succeeded is shown.
+screenshot: docs/screenshots/PRISM-16.png

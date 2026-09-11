@@ -1,0 +1,9 @@
+id: PRISM-34
+name: The Asset Purchase
+category: Dynamic Data & Network Artifacts
+difficulty: Extreme
+summary: A page listing assets you can buy, each with its own Buy button.
+goal:
+  - Buy the asset the page asks for, then confirm the purchase.
+success_signal: A confirmation that the purchase succeeded is shown.
+screenshot: docs/screenshots/PRISM-34.png

@@ -1,0 +1,10 @@
+id: PRISM-12
+name: The Campaign Schedule
+category: Non-Deterministic & Generative UI
+difficulty: High
+summary: A campaign scheduling page that collects three dates below, then saves the schedule.
+goal:
+  - Enter the requested date in each of the three date fields.
+  - Save the schedule.
+success_signal: A confirmation that the schedule was saved is shown.
+screenshot: docs/screenshots/PRISM-12.png

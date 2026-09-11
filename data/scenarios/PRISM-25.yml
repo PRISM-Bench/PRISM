@@ -1,0 +1,9 @@
+id: PRISM-25
+name: The Walkthrough Checkpoint
+category: Canvas & WebGL Blind Spot
+difficulty: Medium
+summary: A walkthrough page that plays through to a named checkpoint.
+goal:
+  - Advance the walkthrough to the checkpoint the page names, then confirm it.
+success_signal: A confirmation that the checkpoint was confirmed is shown.
+screenshot: docs/screenshots/PRISM-25.png

@@ -1,0 +1,9 @@
+id: PRISM-42
+name: The Content Panel
+category: Affective & Cognitive Load
+difficulty: Medium
+summary: A single-panel page with one primary action to complete.
+goal:
+  - Complete the action.
+success_signal: A confirmation that the action succeeded is shown.
+screenshot: docs/screenshots/PRISM-42.png

@@ -1,0 +1,9 @@
+id: PRISM-02
+name: The Panel Action
+category: Hydration & Timing Gap
+difficulty: Medium
+summary: A dashboard panel with a single action to complete.
+goal:
+  - Complete the action.
+success_signal: A confirmation that the action succeeded is shown.
+screenshot: docs/screenshots/PRISM-02.png

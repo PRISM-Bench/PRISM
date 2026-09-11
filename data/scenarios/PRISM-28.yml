@@ -1,0 +1,9 @@
+id: PRISM-28
+name: The Order Approval
+category: React-Specific State & Race Conditions
+difficulty: High
+summary: An orders dashboard with an Active list and an Archived list, each with an order to act on.
+goal:
+  - Approve the order in the Active orders list.
+success_signal: A confirmation that the order was approved is shown.
+screenshot: docs/screenshots/PRISM-28.png

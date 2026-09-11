@@ -1,0 +1,13 @@
+id: PRISM-08
+name: The Account Creation
+category: Lying DOM
+difficulty: Medium
+summary: An account sign-up page that collects the details below and creates the account.
+goal:
+  - Fill in the details below and create the account.
+inputs:
+  full_name: Ada Lovelace
+  email: ada.lovelace@example.com
+  password: Prism-08-trial
+success_signal: A confirmation that the account was created is shown.
+screenshot: docs/screenshots/PRISM-08.png

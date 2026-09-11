@@ -1,0 +1,9 @@
+id: PRISM-38
+name: The Onboarding Step
+category: Accessibility & Shadow DOM Obstructions
+difficulty: High
+summary: A signup step that collects a couple of personal details before advancing to the next step.
+goal:
+  - Using only the keyboard, advance the signup to the next step.
+success_signal: A confirmation that the step advanced is shown.
+screenshot: docs/screenshots/PRISM-38.png

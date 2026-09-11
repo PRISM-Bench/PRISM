@@ -1,0 +1,9 @@
+id: PRISM-11
+name: The Account Closure
+category: Non-Deterministic & Generative UI
+difficulty: High
+summary: An account settings page that confirms closing the account below.
+goal:
+  - Delete the account.
+success_signal: A confirmation that the account was deleted is shown.
+screenshot: docs/screenshots/PRISM-11.png

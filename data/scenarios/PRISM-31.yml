@@ -1,0 +1,9 @@
+id: PRISM-31
+name: The Cart Checkout
+category: Dynamic Data & Network Artifacts
+difficulty: Medium
+summary: A cart page listing your items, with a single checkout button.
+goal:
+  - Review the cart and check out.
+success_signal: A confirmation that the checkout succeeded is shown.
+screenshot: docs/screenshots/PRISM-31.png

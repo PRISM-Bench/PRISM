@@ -1,0 +1,9 @@
+id: PRISM-36
+name: The Product Purchase
+category: Accessibility & Shadow DOM Obstructions
+difficulty: High
+summary: A product page where you choose a quantity and add it to your cart.
+goal:
+  - Add two of the product to the cart.
+success_signal: A confirmation that both items were added to the cart is shown.
+screenshot: docs/screenshots/PRISM-36.png

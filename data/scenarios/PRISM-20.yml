@@ -1,0 +1,9 @@
+id: PRISM-20
+name: The Action Button
+category: Visual Occlusion & Layout Shifts
+difficulty: Medium
+summary: An action page with a single button to complete the action.
+goal:
+  - Complete the action.
+success_signal: A confirmation that the action succeeded is shown.
+screenshot: docs/screenshots/PRISM-20.png

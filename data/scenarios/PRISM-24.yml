@@ -1,0 +1,9 @@
+id: PRISM-24
+name: The Agreement Signature
+category: Canvas & WebGL Blind Spot
+difficulty: Medium
+summary: An agreement page that shows the terms for you to review, then add your signature.
+goal:
+  - Add your signature to the agreement.
+success_signal: A confirmation that the signature was recorded is shown.
+screenshot: docs/screenshots/PRISM-24.png

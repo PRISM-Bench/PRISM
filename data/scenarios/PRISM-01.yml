@@ -1,0 +1,9 @@
+id: PRISM-01
+name: The Transaction Submit
+category: Hydration & Timing Gap
+difficulty: Medium
+summary: A checkout-style page showing the transaction details, with a button to submit them.
+goal:
+  - Submit the transaction.
+success_signal: A confirmation that the transaction succeeded is shown.
+screenshot: docs/screenshots/PRISM-01.png

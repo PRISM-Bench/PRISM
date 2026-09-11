@@ -1,0 +1,9 @@
+id: PRISM-15
+name: The Support Intake
+category: Non-Deterministic & Generative UI
+difficulty: Extreme
+summary: A support intake page that collects what you need help with below.
+goal:
+  - Tell the support team what you need help with, then submit the request.
+success_signal: A confirmation that the request was submitted is shown.
+screenshot: docs/screenshots/PRISM-15.png
