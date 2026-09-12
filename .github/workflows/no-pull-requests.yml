@@ -1,0 +1,65 @@
+name: no-pull-requests
+
+# This repository is generated. Every file in it is assembled and pushed from a
+# private source repo, so an edit made here is overwritten by the next publish
+# and can never reach the benchmark. Pull requests cannot be accepted, and
+# GitHub offers no way to refuse them: a public repository is always forkable,
+# and there is no setting that turns pull requests off. So they get closed here
+# instead, with a pointer to the channel that does work.
+#
+# `pull_request_target`, not `pull_request`: a pull request opened from a fork
+# runs under a read-only token and cannot close anything. That trigger is the
+# dangerous one *when a workflow checks out or executes the pull request's
+# code*, because it runs in the base repository's context with a writable
+# token. This job checks nothing out, runs nothing from the branch, and
+# interpolates no attacker-controlled string — only the PR number, which GitHub
+# guarantees is an integer. Keep it that way: a title or body pasted into a
+# `run:` block here would be a script-injection hole.
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    # Fork pull requests only. A pull request whose head branch lives in this
+    # repository could only have been pushed by someone with write access, and
+    # the only accounts that have it are the operator's — which is how a
+    # publish lands: `scripts/publish` pushes a `publish-<sha>` branch straight
+    # to this repo and opens a pull request from it. Closing that would wall
+    # the operator out of their own repository. GitHub sets `head.repo` itself,
+    # so this cannot be spoofed by the pull request that triggers the run.
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain, then close
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          cat > body.md <<'MSG'
+          Thanks for taking the time — but this repository cannot take pull requests,
+          and that is a property of how it is built rather than a policy about your
+          change.
+
+          Every file here is generated: the scenario specs, the docs and the scoring
+          modules are assembled from a private source repository and pushed as a
+          single mechanical commit. A change committed here would be overwritten by
+          the next publish and would never reach the benchmark itself.
+
+          Two things do reach it:
+
+          - **Proposing a scenario** — open an issue using the scenario proposal form.
+            It is the one inbound channel this repository has, and proposals are read.
+          - **Entering a framework** — submissions are not made on GitHub at all. See
+            `submissions/README.md`; they arrive privately and are run by the operator.
+
+          If you found something wrong in a spec or a document, an issue describing it
+          is more useful than a patch, because the fix has to be made at the source.
+          MSG
+          gh pr comment "$PR_NUMBER" --repo "$REPO" --body-file body.md
+          gh pr close "$PR_NUMBER" --repo "$REPO"
