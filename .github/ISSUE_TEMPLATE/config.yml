@@ -1,0 +1,8 @@
+# Blank issues are off, so the chooser offers the scenario-proposal form and
+# nothing else.
+#
+# Issues are the public repo's only inbound channel: submissions arrive by
+# private form, and a content pull request would not survive the next publish
+# because every file here is regenerated from PRISM-core. A free-form issue
+# would therefore be an invitation to a conversation this repo cannot act on.
+blank_issues_enabled: false
