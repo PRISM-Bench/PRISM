@@ -26,12 +26,13 @@ steps:
 4. **Submit the form.** Upload your entry as a single archive whose root is the
    directory holding `metadata.yaml`, and declare the archive's SHA-256.
 
-<!-- TODO(operator): replace with the live intake form URL before the
-     visibility flip. Greppable token: PRISM_INTAKE_FORM_URL -->
+**Intake form:**
+[PRISM Benchmark — Framework Submission](https://docs.google.com/forms/d/e/1FAIpQLSctEfXcowq1E7tr45LssjE7PBK67l5nHbrn6RBNh5g-DZN4AQ/viewform)
 
-**Intake form:** `PRISM_INTAKE_FORM_URL` — _not published yet; the link appears
-here when the first round opens, announced through the same channel as this
-repo's releases._
+The form requires a Google sign-in. That is not a preference — a file-upload
+question forces it, and there is no setting that removes it. The upside is that
+a verified identity travels with every upload; the cost is that an employer who
+blocks personal Google auth blocks the form.
 
 **How your entry is run and scored:** see [`RANKED.md`](RANKED.md) — the
 scenario set, seeds, result granularity, and cadence. Your suite stays private;
