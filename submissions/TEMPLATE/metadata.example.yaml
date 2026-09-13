@@ -12,7 +12,9 @@
 # `declared_hosts_only` check scans every non-Markdown file in an entry for
 # `http(s)://` hosts, and a link here would read as a host your run contacts.
 framework: your-framework
-version: '2026-Q3'
+# Your framework's own version — the build this entry runs, resolved rather
+# than a range. Not the round: that travels on your form response.
+version: '2.4.0'
 contact: you@example.com
 submission_date: 2026-01-01
 
