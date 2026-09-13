@@ -1,8 +1,14 @@
-# Blank issues are off, so the chooser offers the scenario-proposal form and
-# nothing else.
+# Blank issues stay ON, deliberately.
 #
-# Issues are the public repo's only inbound channel: submissions arrive by
+# They were switched off when `scenario-proposal.yml` was the only form: a
+# free-form issue then had nowhere useful to go. Adding `operator-contact.yml`
+# changed the calculation rather than settling it — two forms still only cover
+# what has been anticipated, and the cost of the gap is asymmetric. A reader
+# with something genuinely unforeseen, finding no way to say it, does not file
+# it differently; they leave, and the operator never learns what they hit.
+#
+# Issues are this repository's only inbound channel: submissions arrive by
 # private form, and a content pull request would not survive the next publish
-# because every file here is regenerated from PRISM-core. A free-form issue
-# would therefore be an invitation to a conversation this repo cannot act on.
-blank_issues_enabled: false
+# because every file here is regenerated from PRISM-core. So the chooser should
+# be as open as that single channel can afford to be.
+blank_issues_enabled: true

@@ -1,0 +1,75 @@
+name: Contact the operator
+description: Submission trouble, a question about the rules, or a challenge to a published result
+title: '[Operator] '
+labels: ['operator-contact']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the route for anything that needs a human at the operator's end rather
+        than a scenario proposal. Two things to know before you type.
+
+        **Do not post your archive URL here — the operator will ask you for it
+        privately.** This issue is public and indexed by search engines. A download
+        link, a digest, credentials, or anything else about your entry does not belong
+        in it: submissions are private by design, and an archive link in a public
+        tracker throws that away for good, since you cannot unpublish what has already
+        been crawled. Say only *that* you are blocked. The operator replies on this
+        issue to set up a private channel, and collects the archive URL and its SHA-256
+        through that channel — never in this thread.
+
+        **Blocked by the Google sign-in?** That is a known limitation, not your mistake.
+        The intake form's file-upload question forces a Google sign-in and no setting
+        removes it, so an employer that blocks personal Google auth blocks the form.
+        Pick that option below, describe nothing more than the block, and you will be
+        given a route in that does not involve Google.
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: What is this about?
+      options:
+        - I cannot use the intake form (Google sign-in is blocked)
+        - Something else is stopping me submitting
+        - A question about CONTRACT.md, RANKED.md or the dry run
+        - A published result or score I want to query
+        - An error in a scenario spec, a screenshot, or the docs
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: Detail
+      description: >-
+        What you were doing, what happened, and what you expected instead. If this is
+        about a published result, name the quarter and the framework — both are public,
+        so neither discloses anything.
+    validations:
+      required: true
+
+  - type: input
+    id: framework
+    attributes:
+      label: Framework
+      description: >-
+        Optional. The framework you are entering or asking about, if this concerns an
+        entry. A name only — nothing about the entry's contents.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Before you submit
+      options:
+        - label: >-
+            This issue contains no archive link, digest, credentials, or anything else
+            about my entry that I would not publish
+          required: true
+        - label: >-
+            I understand the operator will ask me for the archive URL through a private
+            channel, and that I should not post it here even if asked to "share the
+            link"
+          required: true
