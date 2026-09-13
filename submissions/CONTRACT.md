@@ -40,7 +40,7 @@ shape:
 
 ```yaml
 framework: momentic
-version: '2026-Q3'
+version: '3.55.0'
 contact: you@example.com
 submission_date: 2026-07-30
 
@@ -61,6 +61,17 @@ network:
 
 `quarter` and `submitter` are optional keys used only by operator entries;
 they are not part of the vendor contract.
+
+`version` is the version of **your framework** — the build this entry runs, as
+its own release numbering gives it (`3.55.0`, `0.8.10`, `1.0.16`). It is not
+the round you are entering: the round travels on your form response, and
+`submission_date` dates the entry.
+
+The distinction earns its keep when a score moves between quarters. A framework
+that silently changed how it sizes a browser, or when it considers a page
+settled, will score differently on an unchanged scenario set — and without the
+build recorded against the run, that difference is unattributable. Give the
+resolved version, not a range: `1.0.16`, never `^1.0.16`.
 
 `contact` should be an address a human reads. Your entry is private — only your
 score and the archive's SHA-256 are published — so this is how the operator
