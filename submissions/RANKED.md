@@ -19,18 +19,25 @@ how well it was studied; the only way to keep 50 scenarios measuring perception
 is for all 50 to stay unobserved. What replaces rehearsal is the unscored dry
 run in `README.md`, which reports contract faults and no results.
 
-## Warm-up
+## Seeds
 
-Each ranked run warms on seed 1, then scores on seeds 2–6. Warming on the same
-seed you're scored against would let a framework replay a cached path instead of
-perceiving the page fresh each time — the number produced would measure replay,
-not perception.
+Each ranked run scores every seed. A ranked seed file carries six values per
+scenario and all six rounds count toward the published number — nothing runs as
+an unscored warm-up and nothing is discarded.
 
-Five scored seeds rather than two because the per-category breakdown above is
-where thin sampling shows: a handful of scenarios swing between runs depending
-on whether an interaction beat a timing window, and at two seeds the noisiest
-category carried roughly ±0.05 — enough to blur a real difference between two
-entrants.
+Seeds move a scenario's parameters and leave its structure alone. That mirrors
+what a real suite meets: a page's controls and flow stay put between runs while
+its data and timing move. A framework that caches a resolved path will therefore
+replay that path across rounds, and PRISM measures the replay rather than
+preventing it — the sandbox grades what actually happened on the page, so a
+replayed click that lands on a control before that control is live still records
+the failed interaction it earns. A cache that keeps working is a capability; a
+cache that keeps firing at the wrong moment is what the score is for.
+
+Six seeds rather than two because the per-category breakdown above is where thin
+sampling shows: a handful of scenarios swing between runs depending on whether an
+interaction beat a timing window, and at two seeds the noisiest category carried
+roughly ±0.05 — enough to blur a real difference between two entrants.
 
 ## What counts as the right answer
 
