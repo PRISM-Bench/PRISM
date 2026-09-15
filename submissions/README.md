@@ -39,7 +39,7 @@ scenario set, seeds, result granularity, and cadence. Your suite stays private;
 what gets published from your submission is the score and the archive's
 SHA-256.
 
-## Before you enter: two things that decide whether it's worth it
+## Before you enter: three things that decide whether it's worth it
 
 **Scripted runners are at a structural disadvantage on the ranked set.**
 Ranked scenarios are authored blind from the published specs — you get the
@@ -67,6 +67,16 @@ small enough (drive a browser to `/scenarios/PRISM-NN`, attempt the task, emit
 JUnit carrying `prism-NN`) that everything separating a working entry from a
 broken one can be exercised without a PRISM page behind it. The dry run below
 closes the rest of the gap.
+
+**Submitting is consent to publish.** Your score goes on the leaderboard for
+that quarter, and there is no way to withdraw it once you have seen it. You get
+five business days with the result before it is public, and roughly a hundred
+words of reply printed beside your row, but neither is a veto. If you would
+rather not be measured in public, the time to decide is before the run — you can
+withdraw at any point up to it, and nothing is recorded. `RANKED.md` sets out
+what happens after a run, including the one case that stops a number being
+published: a run the operator finds was faulty, which is voided and re-run
+rather than scored.
 
 ## The dry run
 

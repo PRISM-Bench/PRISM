@@ -108,6 +108,59 @@ claim the operator scored something other than what you sent; and if you later
 choose to publish your suite yourself, any third party can verify it is the same
 bytes that produced the score.
 
+## After the run
+
+**Submitting is consent to publish.** Your result goes on the leaderboard for
+that quarter. Everything in this section is notice and correction; none of it is
+a veto, and there is no way to withdraw a result once you have seen it. The one
+thing that can stop a number being published is the operator finding that the
+run itself was faulty — see void runs, below.
+
+You can withdraw before the run for any reason or none, and nothing is recorded.
+Once results are delivered, that door closes. This is deliberate. A benchmark
+whose headline statistic counts false passes cannot also let a vendor delete a
+number they dislike, and the remedies below cover every complaint that is not
+simply "we saw the score and would rather you didn't print it".
+
+**Embargo: five business days.** Results reach you before they reach the
+leaderboard — the aggregate vector, the RPS-Index, the three counts and the
+category breakdown, the same things the public row will carry. The window is for
+reading the result, raising a dispute if you believe it is wrong, and drafting
+a reply. It is not a decision point; publication is already settled by the time
+it starts.
+
+**Right of reply.** Ask during the embargo and one hundred words of yours run
+beside your row, verbatim and attributed, at the same weight as the row itself.
+One statement per entry per quarter, and the hundred words are a cap rather than
+an opening position. Use it for context you think the number is missing — a
+misconfiguration you have since fixed, a feature of your product the run did not
+exercise, a disagreement with how PRISM weighs something. It is scoped to this
+result, this entry, or the product behaviour the run exercised; it is not a
+slot for general marketing copy. The operator never edits your words, may append
+a factual correction underneath, and may decline to publish a statement that is
+false or defamatory — in which case the row says a statement was declined. A
+reply never delays publication.
+
+**Factual disputes are different, and they have a remedy.** A reply is what you
+say about a result; a dispute is a claim that the result is wrong. Raise one and
+the full telemetry for your run is released to you — seed by seed, interaction by
+interaction — which is the record against which any claim about an environment
+fault can be checked. If the operator agrees a fault occurred, the run is **void
+rather than corrected**: it is re-run, and the void run is never published. The
+immutability rule in _Cadence_ protects scored snapshots from revision; it does
+not shield operator error.
+
+**Void runs.** A run that does not execute all fifty scenarios is not scored. It
+is reported as incomplete, without a number, because a partial run does not
+produce a low score — it produces a meaningless one. Some scenarios cannot be
+completed at all, and an honest non-completion earns full credit whether your
+harness reasoned its way there or never started, so a suite that dies partway
+through can still return an aggregate that looks like a result. Where the fault
+lies decides what happens next: operator-side, the run is re-run and the quarter
+is not consumed; your side — exhausted API credits, your own infrastructure, a
+command that does not start — the round is reported incomplete and the quarter
+is consumed.
+
 ## Egress
 
 Egress from the sandbox environment is default-deny. Only the hosts you declare
@@ -121,6 +174,14 @@ SHA-256, is the record of what was submitted for that round: it is retained
 privately and indefinitely, and the published result carries that hash. Once a
 quarter's ranked run has scored a snapshot, that snapshot is immutable — a
 correction is a new submission in the next round, never an edit to a scored one.
+
+**An operator-run row yields to your own entry.** Until a framework submits, the
+operator may author and run an entry for it so the board is not empty; those rows
+are labelled as operator-authored, because who wrote the tests moves the number.
+If your entry arrives before that quarter is published, it replaces the
+operator-run row for your framework. If it arrives after, the quarter's snapshot
+is already immutable — the operator-run row stands for that quarter and your
+entry scores at the next boundary.
 
 **The scenario set is frozen within a quarter.** A ranked round scores the set as
 it stood when that round opened, so a scenario accepted mid-quarter cannot move
