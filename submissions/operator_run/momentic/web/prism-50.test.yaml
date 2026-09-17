@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-50
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-50'
+  - act:
+      goal: Delete the user.
+      postcondition: A confirmation that the user was deleted is shown.

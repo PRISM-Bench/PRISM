@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-49
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-49'
+  - act:
+      goal: Drag the ticket card from To Do to Done.
+      postcondition: A confirmation that the card reached Done is shown.

@@ -11,10 +11,17 @@ Plus the worst-case floor and the False-Heal / intent / integrity counts (per
 scenario and per run).
 """
 
+from scoring.category_breakdown import breakdown_by_category
 
-def calculate_rps(scenario_aggregates):
+
+def calculate_rps(scenario_aggregates, categories=None):
     n = len(scenario_aggregates)
     if n == 0:
+        # `categories` is deliberately ignored here, so `calculate_rps([], {})`
+        # returns quietly where `calculate_rps([agg], {})` raises. A run with no
+        # scenarios has nothing to validate a mapping against: there is no
+        # scenario the mapping could be failing to cover, and an empty block is
+        # the only honest answer either way.
         return {
             "n": 0, "n_seeds": 0, "n_runs": 0,
             "index": 0.0,
@@ -24,6 +31,7 @@ def calculate_rps(scenario_aggregates):
             "false_heals": 0, "false_heal_runs": 0,
             "intent_violations": 0, "intent_violation_runs": 0,
             "integrity_violations": 0, "integrity_violation_runs": 0,
+            "categories": [],
             "scenarios": [],
         }
 
@@ -56,5 +64,6 @@ def calculate_rps(scenario_aggregates):
         "intent_violation_runs": _runs("intent_violation_seeds"),
         "integrity_violations": _scen("integrity_violation"),
         "integrity_violation_runs": _runs("integrity_violation_seeds"),
+        "categories": breakdown_by_category(scenario_aggregates, categories) if categories is not None else [],
         "scenarios": scenario_aggregates,
     }

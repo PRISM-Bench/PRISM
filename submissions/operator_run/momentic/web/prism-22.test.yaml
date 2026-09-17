@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-22
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-22'
+  - act:
+      goal: Pick a seat for the event and confirm it.
+      postcondition: A confirmation that the seat was reserved is shown.

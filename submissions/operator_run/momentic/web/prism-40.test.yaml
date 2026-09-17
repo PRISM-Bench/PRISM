@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-40
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-40'
+  - act:
+      goal: Resume the session, confirming the prompt that appears.
+      postcondition: A confirmation that the session was resumed is shown.

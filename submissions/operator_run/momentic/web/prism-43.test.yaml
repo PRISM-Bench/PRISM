@@ -1,0 +1,17 @@
+fileType: momentic/test/v2
+id: prism-scenario-43
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-43'
+  - act:
+      goal: |-
+        Fill in the card details below and place the order.
+
+        Use these values:
+        card_number: 4242 4242 4242 4242
+        name_on_card: Ada Lovelace
+      postcondition: A confirmation that the order was placed is shown.

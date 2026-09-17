@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-34
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-34'
+  - act:
+      goal: Buy the asset the page asks for, then confirm the purchase.
+      postcondition: A confirmation that the purchase succeeded is shown.

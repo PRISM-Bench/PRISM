@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-15
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-15'
+  - act:
+      goal: Tell the support team what you need help with, then submit the request.
+      postcondition: A confirmation that the request was submitted is shown.

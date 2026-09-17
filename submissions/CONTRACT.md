@@ -30,8 +30,15 @@ not matter.
 
 [`TEMPLATE/`](TEMPLATE/) is this shape as files: copy the directory, rename
 `metadata.example.yaml` to `metadata.yaml`, and author your test files. It
-carries none, deliberately — a published entry's test files are worked answers
-to scenarios you are meant to author blind.
+carries none so that it stays undiscoverable to the validator — an entry with
+a `metadata.yaml` and no tests fails `scenario_coverage` with all 50 missing.
+
+For test files as files, read the three operator-run entries under
+[`operator_run/`](operator_run/). They are operator-authored references in three
+framework shapes, and they are examples rather than a mandate: copy them
+verbatim or author your own, whichever suits your system. Nothing in them is
+material you could not already read. Every string an agent sees there is that
+scenario's published `goal` and `success_signal`, byte-for-byte.
 
 ## 2. `metadata.yaml`
 

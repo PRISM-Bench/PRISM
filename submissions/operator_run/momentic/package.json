@@ -1,0 +1,15 @@
+{
+  "name": "prism-example-momentic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local harness: benchmarking Momentic against the PRISM scenario suite.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@momentic/wizard": "1.0.1"
+  },
+  "devDependencies": {
+    "momentic": "3.57.0"
+  }
+}

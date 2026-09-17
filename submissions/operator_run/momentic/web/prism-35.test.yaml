@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-35
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-35'
+  - act:
+      goal: Publish the article.
+      postcondition: A confirmation that the article was published is shown.

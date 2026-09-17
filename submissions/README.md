@@ -39,6 +39,21 @@ scenario set, seeds, result granularity, and cadence. Your suite stays private;
 what gets published from your submission is the score and the archive's
 SHA-256.
 
+## Worked references
+
+Three operator-authored entries ship under [`operator_run/`](operator_run/), one
+per framework shape:
+
+| Entry                                 | Shape                                                                                         |
+| ------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`passmark/`](operator_run/passmark/) | A Playwright library driving an AI agent — the config is a standard `playwright.config.ts`    |
+| [`momentic/`](operator_run/momentic/) | A hosted AI agent taking one goal and one postcondition per test                              |
+| [`kane/`](operator_run/kane/)         | A CLI agent reading plain-English Markdown, with an adapter that converts its output to JUnit |
+
+They are **examples, not a mandate** — copy them or author your own. They carry
+no material you could not read in a scenario's published spec, so copying them
+confers no advantage.
+
 ## Before you enter: three things that decide whether it's worth it
 
 **Scripted runners are at a structural disadvantage on the ranked set.**

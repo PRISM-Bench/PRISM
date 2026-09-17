@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-39
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-39'
+  - act:
+      goal: Send a message through the contact form.
+      postcondition: A confirmation that the message was sent is shown.

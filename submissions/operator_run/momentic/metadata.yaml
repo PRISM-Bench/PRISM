@@ -1,0 +1,20 @@
+framework: momentic
+version: '3.57.0'
+quarter: 2026-Q3
+submitter: operator
+contact: you@example.com
+submission_date: 2026-07-30
+
+scope: full
+
+tests:
+  glob: web/prism-*.test.yaml
+
+run:
+  setup: npm install && npx momentic install-browsers chromium
+  command: npx momentic run --env web -y --reporter junit --reporter-dir reports
+  results: reports/*.xml
+
+network:
+  allowlist:
+    - app.momentic.ai

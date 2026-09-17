@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-46
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-46'
+  - act:
+      goal: Pick something from the catalog and buy it.
+      postcondition: A confirmation that the purchase succeeded is shown.

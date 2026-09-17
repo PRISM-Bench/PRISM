@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-25
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-25'
+  - act:
+      goal: Advance the walkthrough to the checkpoint the page names, then confirm it.
+      postcondition: A confirmation that the checkpoint was confirmed is shown.

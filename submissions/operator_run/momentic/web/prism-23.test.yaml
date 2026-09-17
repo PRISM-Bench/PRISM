@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-23
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-23'
+  - act:
+      goal: Drag the logo to the requested zone.
+      postcondition: A confirmation that the logo landed in the right zone is shown.

@@ -1,0 +1,18 @@
+fileType: momentic/test/v2
+id: prism-scenario-08
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-08'
+  - act:
+      goal: |-
+        Fill in the details below and create the account.
+
+        Use these values:
+        full_name: Ada Lovelace
+        email: ada.lovelace@example.com
+        password: Prism-08-trial
+      postcondition: A confirmation that the account was created is shown.
