@@ -13,10 +13,13 @@ the pre-submission dry run. This directory shows the shape.
 | ----------------------------- | -------------------------------------------------------------------------------- |
 | `metadata.yaml`               | The contract: framework, contact, scope, test glob, run commands, declared hosts |
 | Runner config                 | Your framework's own config. The Momentic one here is an example                 |
-| `web/prism-NN.test.yaml` × 50 | Your tests. **Not shipped in this template** — you author them                   |
+| `web/prism-NN.test.yaml` × 50 | Your tests. Not in this template — see `operator_run/` for three worked sets     |
 
 No results, no reports, no scores. The operator runs the entry and scores it;
 an entry that ships its own results is claiming an outcome nobody observed.
+
+This directory shows the shape with the values blanked. For three filled-in
+entries in real framework shapes, see [`../operator_run/`](../operator_run/).
 
 ## The naming convention that matters
 

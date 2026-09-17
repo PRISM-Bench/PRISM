@@ -1,0 +1,19 @@
+fileType: momentic/test/v2
+id: prism-scenario-32
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-32'
+  - act:
+      goal: |-
+        Enter the profile details below, moving through each stage. Save the profile.
+
+        Use these values:
+        name: Ada Lovelace
+        email: ada.lovelace@example.com
+        phone: +1 555 0142
+        location: London
+      postcondition: The confirmation shows the name "Ada Lovelace".

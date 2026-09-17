@@ -1,0 +1,23 @@
+framework: passmark
+version: '1.0.16'
+quarter: 2026-Q3
+submitter: operator
+contact: you@example.com
+submission_date: 2026-09-09
+
+scope: full
+
+tests:
+  glob: tests/prism-*.spec.ts
+
+run:
+  setup: npm install && npx playwright install chromium
+  command: npx playwright test
+  results: results/junit.xml
+
+# Passmark drives the page with an AI agent and verifies assertions with vision
+# models, both reached through OpenRouter (`gateway: "openrouter"` in
+# prism.setup.ts). The browser runs locally; only snapshots leave the machine.
+network:
+  allowlist:
+    - openrouter.ai

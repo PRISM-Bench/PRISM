@@ -1,0 +1,16 @@
+fileType: momentic/test/v2
+id: prism-scenario-04
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-04'
+  - act:
+      goal: |-
+        Enter the email address below and confirm it.
+
+        Use these values:
+        email: tester@example.com
+      postcondition: A confirmation that the submission succeeded is shown.

@@ -1,0 +1,16 @@
+{
+  "name": "prism-example-passmark",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local harness: benchmarking Passmark against the PRISM scenario suite.",
+  "scripts": {
+    "test": "playwright test",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.0",
+    "dotenv": "^16.4.5",
+    "passmark": "^1.0.16",
+    "playwright-core": "^1.59.0"
+  }
+}

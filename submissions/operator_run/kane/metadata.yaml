@@ -1,0 +1,33 @@
+framework: kane-cli
+version: '0.8.14'
+quarter: 2026-Q3
+submitter: operator
+contact: you@example.com
+submission_date: 2026-09-09
+
+scope: full
+
+tests:
+  glob: tests/prism-*_test.md
+
+run:
+  setup: brew install LambdaTest/kane/kane-cli && kane-cli login &&
+    kane-cli config set-window 1280x807
+  command: python3 run_prism.py
+  results: results/junit.xml
+
+# kane-cli reaches TestMu/LambdaTest for the agent that drives each step, and
+# 127.0.0.1 is the local Chrome kane-cli drives itself. The suite reaches the
+# sandbox through `{{ BASE_URL }}`, resolved per run from PRISM_SANDBOX_URL, so
+# no address is written into the entry.
+#
+# The setup step's `set-window 1280x807` is load-bearing: Chrome spends 87 CSS px
+# of the window on its own UI, so that is what renders the 1280x720 viewport
+# PRISM grades. run_prism.py refuses to start if the config says anything else.
+network:
+  allowlist:
+    - kaneai-api.lambdatest.com
+    - test-manager-api.lambdatest.com
+    - api.lambdatest.com
+    - downloads.lambdatest.com
+    - 127.0.0.1

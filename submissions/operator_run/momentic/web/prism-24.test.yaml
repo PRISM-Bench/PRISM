@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-24
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-24'
+  - act:
+      goal: Add your signature to the agreement.
+      postcondition: A confirmation that the signature was recorded is shown.

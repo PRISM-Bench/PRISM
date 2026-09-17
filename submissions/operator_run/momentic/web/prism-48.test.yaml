@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-48
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-48'
+  - act:
+      goal: Look up the receipt for this order and note the confirmation code it shows. Enter that code on the checkout form and finish the purchase.
+      postcondition: A confirmation that the purchase went through is shown.

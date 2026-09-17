@@ -1,0 +1,16 @@
+fileType: momentic/test/v2
+id: prism-scenario-26
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-26'
+  - act:
+      goal: |-
+        Update the profile name to the value below and save it.
+
+        Use these values:
+        name: Updated Name
+      postcondition: The profile shows the updated name.

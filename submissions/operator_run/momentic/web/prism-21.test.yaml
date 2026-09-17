@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-21
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-21'
+  - act:
+      goal: Select the highest point on the chart.
+      postcondition: A confirmation that the selection succeeded is shown.

@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-33
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-33'
+  - act:
+      goal: Approve the refund for the order requested on the page.
+      postcondition: A confirmation that the refund was approved is shown.

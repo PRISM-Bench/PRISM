@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-27
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-27'
+  - act:
+      goal: Like the post.
+      postcondition: The post is shown as liked.

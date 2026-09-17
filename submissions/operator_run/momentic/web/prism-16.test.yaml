@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-16
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-16'
+  - act:
+      goal: Open the Edit control on the account settings row that has one.
+      postcondition: A confirmation that the action succeeded is shown.

@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-36
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-36'
+  - act:
+      goal: Add two of the product to the cart.
+      postcondition: A confirmation that both items were added to the cart is shown.

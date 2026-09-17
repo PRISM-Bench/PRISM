@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-37
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-37'
+  - act:
+      goal: Open the help.
+      postcondition: The help content is shown.

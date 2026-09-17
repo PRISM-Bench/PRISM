@@ -1,0 +1,12 @@
+fileType: momentic/test/v2
+id: prism-scenario-38
+version: 1.0.24
+viewport:
+  width: 1280
+  height: 720
+steps:
+  - navigate:
+      url: '{{ env.BASE_URL }}/scenarios/PRISM-38'
+  - act:
+      goal: Using only the keyboard, advance the signup to the next step.
+      postcondition: A confirmation that the step advanced is shown.
