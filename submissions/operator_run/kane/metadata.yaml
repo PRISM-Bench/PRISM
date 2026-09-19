@@ -11,7 +11,7 @@ tests:
   glob: tests/prism-*_test.md
 
 run:
-  setup: brew install LambdaTest/kane/kane-cli && kane-cli login &&
+  setup: npm install -g @testmuai/kane-cli@0.8.14 && kane-cli login &&
     kane-cli config set-window 1280x807
   command: python3 run_prism.py
   results: results/junit.xml
