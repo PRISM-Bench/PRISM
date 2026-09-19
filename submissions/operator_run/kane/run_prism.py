@@ -227,6 +227,41 @@ def junit_xml(records, suite_name="prism-kane"):
     return ET.tostring(suites, encoding="unicode")
 
 
+def broken_reason(stdout):
+    """A reason if Kane reported the run *broken*, else None.
+
+    `broken` is Kane's own word for "this never ran": a missing Chrome, a
+    config it could not read, a variable it could not resolve. Its NDJSON says
+    so explicitly — `testrun_summary.totals.broken`, and `status: "broken"` on
+    the member — while the **exit code does not**. A missing Chrome exits 1,
+    the same code a genuinely failing scenario exits with.
+
+    That is why this reads the stream rather than trusting the code. Booking a
+    broken run as a failure claims the framework honestly reported failure,
+    which is a claim the run did not earn — and on the scenarios that cannot be
+    completed at all, an honest non-completion scores full marks. A Kane run
+    whose browser never launched would come back looking like a partial result
+    instead of an error.
+    """
+    for line in (stdout or "").splitlines():
+        line = line.strip()
+        if not line.startswith("{"):
+            continue
+        try:
+            event = json.loads(line)
+        except ValueError:
+            continue
+        if not isinstance(event, dict):
+            continue
+        totals = event.get("totals")
+        if isinstance(totals, dict) and totals.get("broken"):
+            return f"kane-cli reported {totals['broken']} broken test(s)"
+        if event.get("status") == "broken":
+            path = event.get("path") or "a test"
+            return f"kane-cli reported {path} as broken"
+    return None
+
+
 def classify(exit_code, stdout):
     """(passed, message) for a finished run, or raise on an operational fault."""
     if exit_code == EXIT_PASSED:
@@ -235,6 +270,15 @@ def classify(exit_code, stdout):
         raise OperationalError(
             "kane-cli exited 2 (auth, configuration, Chrome, or an unhandled "
             "exception). This is not a scenario result — fix it and re-run."
+        )
+    broken = broken_reason(stdout)
+    if broken:
+        raise OperationalError(
+            f"{broken}. Kane reports `broken` for a run that never happened — a "
+            "missing Chrome, an unreadable config, an unresolved variable — and "
+            "signals it in the NDJSON rather than in the exit code. This is not "
+            "a scenario result; fix it and re-run. If Chrome is the cause, set "
+            "KANE_CLI_CHROME_PATH to the browser you want it to drive."
         )
     if exit_code == EXIT_CANCELLED:
         return False, failure_message(stdout) or "cancelled or timed out"

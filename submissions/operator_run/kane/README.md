@@ -22,7 +22,7 @@ Questions go to the operator-contact issue form on this repository. The
 ## Running it
 
 ```bash
-brew install LambdaTest/kane/kane-cli
+npm install -g @testmuai/kane-cli@0.8.14
 kane-cli login
 kane-cli config set-window 1280x807
 
