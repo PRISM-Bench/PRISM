@@ -93,8 +93,9 @@ your system handles badly without telling you which page to study.
 
 **Calibration.** Full telemetry is retained operator-side and released to you if
 a result is disputed. That is the calibration channel — the raw record of what
-your entry did, seed by seed and interaction by interaction, against which any
-claim about an environment fault can be checked.
+your entry did, round by round and interaction by interaction, against which any
+claim about an environment fault can be checked. The seed _values_ are the one
+thing held back from it; _Factual disputes_ below says why.
 
 **Your suite is never published.** A published ranked entry would put 50 tuned
 test files per vendor per quarter into the open, and next quarter's entrant would
@@ -143,12 +144,20 @@ reply never delays publication.
 
 **Factual disputes are different, and they have a remedy.** A reply is what you
 say about a result; a dispute is a claim that the result is wrong. Raise one and
-the full telemetry for your run is released to you — seed by seed, interaction by
-interaction — which is the record against which any claim about an environment
+the full telemetry for your run is released to you — round by round, interaction
+by interaction — which is the record against which any claim about an environment
 fault can be checked. If the operator agrees a fault occurred, the run is **void
 rather than corrected**: it is re-run, and the void run is never published. The
 immutability rule in _Cadence_ protects scored snapshots from revision; it does
 not shield operator error.
+
+**One thing is withheld from that telemetry: the seed values.** Rounds are
+identified by index and every event is otherwise intact. The seeds are the
+held-out parameters of a set the same quarter is still measuring other entrants
+against, so handing them to one entrant would compromise the round for everyone —
+including the re-run your own dispute would earn. Nothing diagnostic rests on the
+integers: a fault claim is checked against the sequence of events and their
+outcomes, and that is released whole.
 
 **Void runs.** A run that does not execute all fifty scenarios is not scored. It
 is reported as incomplete, without a number, because a partial run does not
