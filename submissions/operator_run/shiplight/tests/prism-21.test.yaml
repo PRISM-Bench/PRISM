@@ -1,0 +1,5 @@
+goal: Select the highest point on the chart.
+statements:
+  - URL: /scenarios/PRISM-21
+  - intent: Select the highest point on the chart.
+  - VERIFY: A confirmation that the selection succeeded is shown.

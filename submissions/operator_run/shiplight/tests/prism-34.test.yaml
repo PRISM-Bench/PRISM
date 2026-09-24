@@ -1,0 +1,5 @@
+goal: Buy the asset the page asks for, then confirm the purchase.
+statements:
+  - URL: /scenarios/PRISM-34
+  - intent: Buy the asset the page asks for, then confirm the purchase.
+  - VERIFY: A confirmation that the purchase succeeded is shown.

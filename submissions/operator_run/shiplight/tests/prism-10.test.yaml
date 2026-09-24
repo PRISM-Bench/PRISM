@@ -1,0 +1,5 @@
+goal: Acknowledge the report.
+statements:
+  - URL: /scenarios/PRISM-10
+  - intent: Acknowledge the report.
+  - VERIFY: A confirmation that the report was acknowledged is shown.

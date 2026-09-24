@@ -1,0 +1,5 @@
+goal: Add two of the product to the cart.
+statements:
+  - URL: /scenarios/PRISM-36
+  - intent: Add two of the product to the cart.
+  - VERIFY: A confirmation that both items were added to the cart is shown.

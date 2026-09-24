@@ -1,0 +1,5 @@
+goal: Submit the transaction.
+statements:
+  - URL: /scenarios/PRISM-01
+  - intent: Submit the transaction.
+  - VERIFY: A confirmation that the transaction succeeded is shown.

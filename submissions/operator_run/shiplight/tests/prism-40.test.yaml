@@ -1,0 +1,5 @@
+goal: Resume the session, confirming the prompt that appears.
+statements:
+  - URL: /scenarios/PRISM-40
+  - intent: Resume the session, confirming the prompt that appears.
+  - VERIFY: A confirmation that the session was resumed is shown.

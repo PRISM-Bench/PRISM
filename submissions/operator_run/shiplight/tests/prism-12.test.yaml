@@ -1,0 +1,5 @@
+goal: Enter the requested date in each of the three date fields. Save the schedule.
+statements:
+  - URL: /scenarios/PRISM-12
+  - intent: Enter the requested date in each of the three date fields. Save the schedule.
+  - VERIFY: A confirmation that the schedule was saved is shown.

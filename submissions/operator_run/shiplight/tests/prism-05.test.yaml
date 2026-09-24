@@ -1,0 +1,9 @@
+goal: Pay for the order using the details below.
+statements:
+  - URL: /scenarios/PRISM-05
+  - intent: |-
+      Pay for the order using the details below.
+
+      Use these values:
+      card_number: 4242 4242 4242 4242
+  - VERIFY: A confirmation that the payment succeeded is shown.

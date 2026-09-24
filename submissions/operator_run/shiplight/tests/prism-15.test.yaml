@@ -1,0 +1,5 @@
+goal: Tell the support team what you need help with, then submit the request.
+statements:
+  - URL: /scenarios/PRISM-15
+  - intent: Tell the support team what you need help with, then submit the request.
+  - VERIFY: A confirmation that the request was submitted is shown.

@@ -1,0 +1,9 @@
+{
+  "name": "prism-shiplight-entry",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "1.60.0",
+    "shiplightai": "0.1.105"
+  }
+}

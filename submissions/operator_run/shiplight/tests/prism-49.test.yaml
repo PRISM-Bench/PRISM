@@ -1,0 +1,5 @@
+goal: Drag the ticket card from To Do to Done.
+statements:
+  - URL: /scenarios/PRISM-49
+  - intent: Drag the ticket card from To Do to Done.
+  - VERIFY: A confirmation that the card reached Done is shown.

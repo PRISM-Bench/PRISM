@@ -1,0 +1,5 @@
+goal: Pick something from the catalog and buy it.
+statements:
+  - URL: /scenarios/PRISM-46
+  - intent: Pick something from the catalog and buy it.
+  - VERIFY: A confirmation that the purchase succeeded is shown.

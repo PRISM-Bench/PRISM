@@ -1,0 +1,5 @@
+goal: Open the Privacy Policy from the bottom of the page.
+statements:
+  - URL: /scenarios/PRISM-18
+  - intent: Open the Privacy Policy from the bottom of the page.
+  - VERIFY: A confirmation that the privacy policy was opened is shown.

@@ -1,0 +1,5 @@
+goal: Review the summary, then continue.
+statements:
+  - URL: /scenarios/PRISM-19
+  - intent: Review the summary, then continue.
+  - VERIFY: A confirmation that the action succeeded is shown.

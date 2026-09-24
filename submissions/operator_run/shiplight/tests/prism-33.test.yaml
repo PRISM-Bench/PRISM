@@ -1,0 +1,5 @@
+goal: Approve the refund for the order requested on the page.
+statements:
+  - URL: /scenarios/PRISM-33
+  - intent: Approve the refund for the order requested on the page.
+  - VERIFY: A confirmation that the refund was approved is shown.

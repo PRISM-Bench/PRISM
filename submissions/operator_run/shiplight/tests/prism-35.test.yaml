@@ -1,0 +1,5 @@
+goal: Publish the article.
+statements:
+  - URL: /scenarios/PRISM-35
+  - intent: Publish the article.
+  - VERIFY: A confirmation that the article was published is shown.

@@ -1,0 +1,5 @@
+goal: Add your signature to the agreement.
+statements:
+  - URL: /scenarios/PRISM-24
+  - intent: Add your signature to the agreement.
+  - VERIFY: A confirmation that the signature was recorded is shown.

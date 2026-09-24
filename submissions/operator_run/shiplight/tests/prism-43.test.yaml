@@ -1,0 +1,10 @@
+goal: Fill in the card details below and place the order.
+statements:
+  - URL: /scenarios/PRISM-43
+  - intent: |-
+      Fill in the card details below and place the order.
+
+      Use these values:
+      card_number: 4242 4242 4242 4242
+      name_on_card: Ada Lovelace
+  - VERIFY: A confirmation that the order was placed is shown.
