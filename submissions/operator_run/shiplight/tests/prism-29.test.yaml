@@ -1,0 +1,5 @@
+goal: Set the appointment to the time slot the page names, then confirm it.
+statements:
+  - URL: /scenarios/PRISM-29
+  - intent: Set the appointment to the time slot the page names, then confirm it.
+  - VERIFY: A confirmation that the appointment was rescheduled is shown.

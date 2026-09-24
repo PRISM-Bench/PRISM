@@ -1,0 +1,5 @@
+goal: Confirm the booking.
+statements:
+  - URL: /scenarios/PRISM-09
+  - intent: Confirm the booking.
+  - VERIFY: A confirmation that the booking was placed is shown.

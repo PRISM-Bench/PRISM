@@ -1,0 +1,5 @@
+goal: Drag the logo to the requested zone.
+statements:
+  - URL: /scenarios/PRISM-23
+  - intent: Drag the logo to the requested zone.
+  - VERIFY: A confirmation that the logo landed in the right zone is shown.

@@ -1,0 +1,5 @@
+goal: Open the help.
+statements:
+  - URL: /scenarios/PRISM-37
+  - intent: Open the help.
+  - VERIFY: The help content is shown.

@@ -1,0 +1,5 @@
+goal: Open the Edit control on the account settings row that has one.
+statements:
+  - URL: /scenarios/PRISM-16
+  - intent: Open the Edit control on the account settings row that has one.
+  - VERIFY: A confirmation that the action succeeded is shown.

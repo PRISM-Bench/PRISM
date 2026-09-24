@@ -1,0 +1,5 @@
+goal: Confirm the order.
+statements:
+  - URL: /scenarios/PRISM-06
+  - intent: Confirm the order.
+  - VERIFY: A confirmation that the order was confirmed is shown.

@@ -1,0 +1,9 @@
+goal: Update the profile name to the value below and save it.
+statements:
+  - URL: /scenarios/PRISM-26
+  - intent: |-
+      Update the profile name to the value below and save it.
+
+      Use these values:
+      name: Updated Name
+  - VERIFY: The profile shows the updated name.

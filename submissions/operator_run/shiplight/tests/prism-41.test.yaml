@@ -1,0 +1,5 @@
+goal: Export the report.
+statements:
+  - URL: /scenarios/PRISM-41
+  - intent: Export the report.
+  - VERIFY: A confirmation that the export succeeded is shown.

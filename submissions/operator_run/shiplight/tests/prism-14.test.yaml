@@ -1,0 +1,5 @@
+goal: Cancel the order the assistant is showing.
+statements:
+  - URL: /scenarios/PRISM-14
+  - intent: Cancel the order the assistant is showing.
+  - VERIFY: A confirmation that the order was cancelled is shown.

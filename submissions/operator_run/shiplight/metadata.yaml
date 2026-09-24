@@ -1,0 +1,43 @@
+framework: shiplight
+version: '0.1.105'
+quarter: 2026-Q4
+submitter: operator
+contact: you@example.com
+submission_date: 2026-09-22
+
+scope: full
+
+tests:
+  glob: tests/prism-*.test.yaml
+
+run:
+  setup: npm install && npx playwright install chromium
+  # Every setting that decides how honest this run is lives in the command
+  # rather than a gitignored .env, so a reviewer reads it in the entry.
+  #
+  # SHIPLIGHT_ACTION_CACHE_BACKEND=local: shiplight saves self-healed locators
+  # from passing tests and replays them on later runs. `auto` sends them to the
+  # vendor's cloud whenever CI and a token are both set, which would carry one
+  # round's learning into the next. This entry also declares no
+  # SHIPLIGHT_API_TOKEN at all, so the cloud backend is unreachable either way;
+  # the variable states the intent rather than relying on that.
+  #
+  # WEB_AGENT_MODEL is pinned because the default is a tier, not a build.
+  command: >-
+    SHIPLIGHT_TELEMETRY=0
+    SHIPLIGHT_ACTION_CACHE_BACKEND=local
+    WEB_AGENT_MODEL=openrouter:google/gemini-3-flash-preview
+    npx shiplight test
+  results: results/junit.xml
+
+# shiplight reaches OpenRouter for the model that drives and verifies each step;
+# the browser runs locally and only snapshots leave the machine. The last three
+# hosts are explained by `run.setup`. No app.shiplight.ai entry: with telemetry
+# off and no SHIPLIGHT_API_TOKEN, nothing in the run authenticates to the
+# vendor's platform.
+network:
+  allowlist:
+    - openrouter.ai
+    - registry.npmjs.org
+    - cdn.playwright.dev
+    - playwright.download.prss.microsoft.com

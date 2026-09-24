@@ -1,0 +1,5 @@
+goal: Approve the order in the Active orders list.
+statements:
+  - URL: /scenarios/PRISM-28
+  - intent: Approve the order in the Active orders list.
+  - VERIFY: A confirmation that the order was approved is shown.

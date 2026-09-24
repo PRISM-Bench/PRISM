@@ -1,0 +1,5 @@
+goal: Using only the keyboard, advance the signup to the next step.
+statements:
+  - URL: /scenarios/PRISM-38
+  - intent: Using only the keyboard, advance the signup to the next step.
+  - VERIFY: A confirmation that the step advanced is shown.

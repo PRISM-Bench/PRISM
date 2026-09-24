@@ -1,0 +1,5 @@
+goal: Like the post.
+statements:
+  - URL: /scenarios/PRISM-27
+  - intent: Like the post.
+  - VERIFY: The post is shown as liked.

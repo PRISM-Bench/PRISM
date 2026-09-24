@@ -1,0 +1,12 @@
+goal: Enter the profile details below, moving through each stage. Save the profile.
+statements:
+  - URL: /scenarios/PRISM-32
+  - intent: |-
+      Enter the profile details below, moving through each stage. Save the profile.
+
+      Use these values:
+      name: Ada Lovelace
+      email: ada.lovelace@example.com
+      phone: +1 555 0142
+      location: London
+  - VERIFY: The confirmation shows the name "Ada Lovelace".

@@ -1,0 +1,5 @@
+goal: Pick a seat for the event and confirm it.
+statements:
+  - URL: /scenarios/PRISM-22
+  - intent: Pick a seat for the event and confirm it.
+  - VERIFY: A confirmation that the seat was reserved is shown.

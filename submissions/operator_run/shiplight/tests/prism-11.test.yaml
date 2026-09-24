@@ -1,0 +1,5 @@
+goal: Delete the account.
+statements:
+  - URL: /scenarios/PRISM-11
+  - intent: Delete the account.
+  - VERIFY: A confirmation that the account was deleted is shown.

@@ -1,0 +1,5 @@
+goal: Send a message through the contact form.
+statements:
+  - URL: /scenarios/PRISM-39
+  - intent: Send a message through the contact form.
+  - VERIFY: A confirmation that the message was sent is shown.

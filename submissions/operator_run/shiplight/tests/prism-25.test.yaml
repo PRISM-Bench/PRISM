@@ -1,0 +1,5 @@
+goal: Advance the walkthrough to the checkpoint the page names, then confirm it.
+statements:
+  - URL: /scenarios/PRISM-25
+  - intent: Advance the walkthrough to the checkpoint the page names, then confirm it.
+  - VERIFY: A confirmation that the checkpoint was confirmed is shown.

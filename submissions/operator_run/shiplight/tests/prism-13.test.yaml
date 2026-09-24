@@ -1,0 +1,5 @@
+goal: Review the order and place it.
+statements:
+  - URL: /scenarios/PRISM-13
+  - intent: Review the order and place it.
+  - VERIFY: A confirmation that the order succeeded is shown.

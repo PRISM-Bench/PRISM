@@ -1,0 +1,5 @@
+goal: Create an account.
+statements:
+  - URL: /scenarios/PRISM-07
+  - intent: Create an account.
+  - VERIFY: A confirmation that the account was created is shown.

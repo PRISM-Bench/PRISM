@@ -1,0 +1,5 @@
+goal: Review the cart and check out.
+statements:
+  - URL: /scenarios/PRISM-31
+  - intent: Review the cart and check out.
+  - VERIFY: A confirmation that the checkout succeeded is shown.

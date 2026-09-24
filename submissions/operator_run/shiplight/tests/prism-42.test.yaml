@@ -1,0 +1,5 @@
+goal: Complete the action.
+statements:
+  - URL: /scenarios/PRISM-42
+  - intent: Complete the action.
+  - VERIFY: A confirmation that the action succeeded is shown.

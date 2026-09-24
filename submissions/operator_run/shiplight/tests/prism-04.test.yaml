@@ -1,0 +1,9 @@
+goal: Enter the email address below and confirm it.
+statements:
+  - URL: /scenarios/PRISM-04
+  - intent: |-
+      Enter the email address below and confirm it.
+
+      Use these values:
+      email: tester@example.com
+  - VERIFY: A confirmation that the submission succeeded is shown.

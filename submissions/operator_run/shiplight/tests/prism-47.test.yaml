@@ -1,0 +1,5 @@
+goal: Make a small edit to the draft. Undo that edit. Save the draft and confirm.
+statements:
+  - URL: /scenarios/PRISM-47
+  - intent: Make a small edit to the draft. Undo that edit. Save the draft and confirm.
+  - VERIFY: A confirmation that the draft was saved is shown.
