@@ -12,7 +12,7 @@ for what RPS measures and why, and
 ## How to enter
 
 Entries arrive privately, through an intake form. **Not by pull request** — see
-[below](#this-repository-does-not-take-content-pull-requests) for why. Three
+[below](#this-repository-does-not-take-content-pull-requests) for why. Four
 steps:
 
 1. **Build against the contract.** [`CONTRACT.md`](CONTRACT.md) has the
@@ -41,14 +41,15 @@ SHA-256.
 
 ## Worked references
 
-Three operator-authored entries ship under [`operator_run/`](operator_run/), one
+Four operator-authored entries ship under [`operator_run/`](operator_run/), one
 per framework shape:
 
-| Entry                                 | Shape                                                                                         |
-| ------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`passmark/`](operator_run/passmark/) | A Playwright library driving an AI agent — the config is a standard `playwright.config.ts`    |
-| [`momentic/`](operator_run/momentic/) | A hosted AI agent taking one goal and one postcondition per test                              |
-| [`kane/`](operator_run/kane/)         | A CLI agent reading plain-English Markdown, with an adapter that converts its output to JUnit |
+| Entry                                   | Shape                                                                                         |
+| --------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`passmark/`](operator_run/passmark/)   | A Playwright library driving an AI agent — the config is a standard `playwright.config.ts`    |
+| [`momentic/`](operator_run/momentic/)   | A hosted AI agent taking one goal and one postcondition per test                              |
+| [`kane/`](operator_run/kane/)           | A CLI agent reading plain-English Markdown, with an adapter that converts its output to JUnit |
+| [`shiplight/`](operator_run/shiplight/) | A YAML-authored suite run by a CLI that self-heals locators between runs                      |
 
 They are **examples, not a mandate** — copy them or author your own. They carry
 no material you could not read in a scenario's published spec, so copying them

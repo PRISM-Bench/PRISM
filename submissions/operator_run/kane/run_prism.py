@@ -242,6 +242,28 @@ def broken_reason(stdout):
     completed at all, an honest non-completion scores full marks. A Kane run
     whose browser never launched would come back looking like a partial result
     instead of an error.
+
+    **This scan is deliberately shallow — do not make it recursive.** It reads
+    only the top level of each NDJSON line, because that is where the two
+    run-level signals live. Kane also emits a triage record NESTED inside
+    `testrun_member_event`, and that record has a `status` field of its own
+    describing the defect classification rather than the execution:
+
+        {"confirmed": false, "status": "broken", "family": "automation_bug",
+         "category": "agent_misstep", "confidence": 0.98,
+         "root_cause": "The agent did not carry out a successful drag ..."}
+
+    `status: "broken"` there means the bug report is unconfirmed. It accompanies
+    a perfectly ordinary failing run — kane-cli exits 1 and the record itself
+    attributes the outcome to the agent, not to any browser or network fault.
+    A scan that walks to arbitrary depth matches it and turns an honest failure
+    into an aborted round. A vendor entry derived from this file did exactly
+    that in 2026-Q4 and could not finish a 300-run round; verified by replaying
+    one captured stream through both classifiers.
+
+    Reporting a plain failure has to keep working: per `submissions/RANKED.md`,
+    a failure is the correct, full-scoring answer on a scenario that cannot be
+    completed, so an adapter that cannot emit one cannot finish a round.
     """
     for line in (stdout or "").splitlines():
         line = line.strip()

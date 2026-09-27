@@ -8,9 +8,9 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@playwright/test": "^1.59.0",
-    "dotenv": "^16.4.5",
-    "passmark": "^1.0.16",
-    "playwright-core": "^1.59.0"
+    "@playwright/test": "1.60.0",
+    "dotenv": "16.4.5",
+    "passmark": "1.0.16",
+    "playwright-core": "1.60.0"
   }
 }
