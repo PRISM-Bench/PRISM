@@ -16,8 +16,14 @@ Ships to the public repo. Scenario IDs come from `data/scenarios/*.yml`, which
 holds the full specs here and the lean specs there — same IDs, so this module is
 correct in both repos with no conditional and no private import.
 
-    python3 -m scripts.validate_submission submissions/operator_run/momentic/2026-Q3
+    python3 -m scripts.validate_submission path/to/your-entry
     python3 -m scripts.validate_submission --all
+
+The example path is deliberately generic. The operator references live under
+`submissions/operator_run/<framework>/<quarter>/` here and are FLATTENED to
+`submissions/operator_run/<framework>/` when published, so any concrete path
+named in this docstring is wrong in one of the two repositories. A vendor is
+pointing this at their own entry anyway.
 """
 
 import argparse
