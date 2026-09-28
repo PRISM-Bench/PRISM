@@ -41,7 +41,7 @@ SHA-256.
 
 ## Worked references
 
-Four operator-authored entries ship under [`operator_run/`](operator_run/), one
+Six operator-authored entries ship under [`operator_run/`](operator_run/), one
 per framework shape:
 
 | Entry                                   | Shape                                                                                         |
@@ -50,6 +50,8 @@ per framework shape:
 | [`momentic/`](operator_run/momentic/)   | A hosted AI agent taking one goal and one postcondition per test                              |
 | [`kane/`](operator_run/kane/)           | A CLI agent reading plain-English Markdown, with an adapter that converts its output to JUnit |
 | [`shiplight/`](operator_run/shiplight/) | A YAML-authored suite run by a CLI that self-heals locators between runs                      |
+| [`hercules/`](operator_run/hercules/)   | An agent reading Gherkin feature files, with an adapter that merges its JUnit into one report |
+| [`magnitude/`](operator_run/magnitude/) | A vision-first agent acting on pixel coordinates rather than selectors                        |
 
 They are **examples, not a mandate** — copy them or author your own. They carry
 no material you could not read in a scenario's published spec, so copying them

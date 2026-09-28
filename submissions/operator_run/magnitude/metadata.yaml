@@ -1,0 +1,53 @@
+framework: magnitude
+# The npm release this entry installs, resolved rather than a range. It is the
+# latest published `magnitude-test` and has been since 2026-02-08.
+version: '0.3.13'
+quarter: 2026-Q4
+submitter: operator
+contact: you@example.com
+submission_date: 2026-09-27
+
+scope: full
+
+tests:
+  glob: tests/prism-*.mag.ts
+
+# This entry measures the SELF-HOSTED, open-source `magnitude-test` runner on
+# PRISM's web scenarios. TestZeus-style hosted execution is out of scope here for
+# a structural reason, not a preference: a managed runner would have to reach a
+# sandbox that has no public URL and is never published.
+#
+# The bundled README of this very version describes a hosted product — a
+# magnitude.run signup, `defineConfig({ baseUrl, apiKey })`, and a reverse tunnel
+# from their servers into localhost. None of it ships: no tunnel, ngrok or
+# magnitude.run endpoint appears anywhere in the package's dist/, and the
+# generated .d.ts describes the local BYO-model configuration this entry uses.
+#
+# `playwright install chromium` is not optional. magnitude-core pins
+# `playwright: npm:patchright@^1.52.0` — patchright, a fork that alters browser
+# fingerprints — which resolves to Playwright 1.63, so a container image pinned at
+# a different Playwright has no browser it will accept. Run this against
+# `mcr.microsoft.com/playwright:v1.63.0-noble`.
+#
+# Everything that decides how honest the run is lives in `magnitude.config.ts`
+# rather than a gitignored dotfile: the graded viewport via Playwright context
+# options, `telemetry: false` (posthog-node is a dependency and analytics default
+# on), `continueAfterFailure: true` because Magnitude otherwise aborts at the
+# first failure — and on PRISM a failure is the correct answer on several
+# scenarios — and the model, which is the operator's choice.
+run:
+  setup: npm install && npx patchright install chromium
+  command: python3 run_prism.py
+  results: results/junit.xml
+
+# openrouter.ai serves the model. The npm registry and the Playwright CDN are
+# setup-time only: patchright downloads its own browser build.
+#
+# The suite reaches the sandbox through `process.env.PRISM_SANDBOX_URL`, resolved
+# per run, so no address is written into the entry.
+network:
+  allowlist:
+    - openrouter.ai
+    - registry.npmjs.org
+    - cdn.playwright.dev
+    - playwright.download.prss.microsoft.com
