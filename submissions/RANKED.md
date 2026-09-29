@@ -94,8 +94,9 @@ your system handles badly without telling you which page to study.
 **Calibration.** Full telemetry is retained operator-side and released to you if
 a result is disputed. That is the calibration channel — the raw record of what
 your entry did, round by round and interaction by interaction, against which any
-claim about an environment fault can be checked. The seed _values_ are the one
-thing held back from it; _Factual disputes_ below says why.
+claim about an environment fault can be checked. Two classes of thing are held
+back from it — the seed _values_, and the fields the sandbox derives in order to
+judge the run; _Factual disputes_ below says which, and why.
 
 **Your suite is never published.** A published ranked entry would put 50 tuned
 test files per vendor per quarter into the open, and next quarter's entrant would
@@ -143,21 +144,43 @@ false or defamatory — in which case the row says a statement was declined. A
 reply never delays publication.
 
 **Factual disputes are different, and they have a remedy.** A reply is what you
-say about a result; a dispute is a claim that the result is wrong. Raise one and
-the full telemetry for your run is released to you — round by round, interaction
-by interaction — which is the record against which any claim about an environment
-fault can be checked. If the operator agrees a fault occurred, the run is **void
+say about a result; a dispute is a claim that the result is wrong.
+
+**A dispute names what it disputes.** Say which scenarios, and what you believe
+went wrong. The telemetry for those scenarios is then released to you — round by
+round, interaction by interaction — which is the record against which any claim
+about an environment fault can be checked. The release is scoped to what you
+named because a release covering all fifty would hand one entrant the thing
+_What counts as the right answer_ says is never published: which scenarios fall
+in which class. No fault claim needs forty-nine scenarios in order to check one. If the operator agrees a fault occurred, the run is **void
 rather than corrected**: it is re-run, and the void run is never published. The
 immutability rule in _Cadence_ protects scored snapshots from revision; it does
 not shield operator error.
 
-**One thing is withheld from that telemetry: the seed values.** Rounds are
-identified by index and every event is otherwise intact. The seeds are the
+**Two classes of thing are withheld from that telemetry.**
+
+**The seed values.** Rounds are identified by index instead. The seeds are the
 held-out parameters of a set the same quarter is still measuring other entrants
 against, so handing them to one entrant would compromise the round for everyone —
 including the re-run your own dispute would earn. Nothing diagnostic rests on the
 integers: a fault claim is checked against the sequence of events and their
-outcomes, and that is released whole.
+outcomes.
+
+**And the fields the sandbox derives in order to judge the run** — the role it
+assigns each control, and the marker on a verdict it authored because that
+verdict must not reach the page. The line is _who produced the field_. Everything
+your run produced is yours to see: the controls you engaged, what you selected,
+coordinates, timings, every perception flag, the environment probe, and each
+round's terminal resolution. What the sandbox computed in order to score you is
+not. A vendor who learns that a click landed before hydration fixes their agent,
+which is the behaviour this benchmark wants; a vendor who learns which control
+was the correct one can hard-code it and stop perceiving the page, which is the
+behaviour it exists to detect.
+
+Neither withholding makes the set safe from study, and this document will not
+pretend otherwise. A scoped release still narrows the class mapping for the
+scenarios it covers. What the scoping changes is the cost: naming a scenario
+buys that scenario, rather than one dispute buying all fifty.
 
 **Void runs.** A run that does not execute all fifty scenarios is not scored. It
 is reported as incomplete, without a number, because a partial run does not
