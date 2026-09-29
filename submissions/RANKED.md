@@ -91,8 +91,9 @@ disclosure as publishing the sandbox, only slower. The category breakdown is
 where actionable feedback lives: it tells you which class of perceptual failure
 your system handles badly without telling you which page to study.
 
-**Calibration.** Full telemetry is retained operator-side and released to you if
-a result is disputed. That is the calibration channel — the raw record of what
+**Calibration.** Full telemetry is retained operator-side and released to you on
+two occasions: if you dispute a result, and — for the scenarios your run got
+wrong — once your quarter has published. That is the calibration channel — the raw record of what
 your entry did, round by round and interaction by interaction, against which any
 claim about an environment fault can be checked. Two classes of thing are held
 back from it — the seed _values_, and the fields the sandbox derives in order to
@@ -152,8 +153,10 @@ round, interaction by interaction — which is the record against which any clai
 about an environment fault can be checked. The release is scoped to what you
 named because a release covering all fifty would hand one entrant the thing
 _What counts as the right answer_ says is never published: which scenarios fall
-in which class. No fault claim needs forty-nine scenarios in order to check one. If the operator agrees a fault occurred, the run is **void
-rather than corrected**: it is re-run, and the void run is never published. The
+in which class. No fault claim needs forty-nine scenarios in order to check one.
+
+If the operator agrees a fault occurred, the run is **void rather than
+corrected**: it is re-run, and the void run is never published. The
 immutability rule in _Cadence_ protects scored snapshots from revision; it does
 not shield operator error.
 
@@ -170,8 +173,11 @@ outcomes.
 assigns each control, and the marker on a verdict it authored because that
 verdict must not reach the page. The line is _who produced the field_. Everything
 your run produced is yours to see: the controls you engaged, what you selected,
-coordinates, timings, every perception flag, the environment probe, and each
-round's terminal resolution. What the sandbox computed in order to score you is
+coordinates, timings, every perception flag, the environment probe, and the
+terminal resolution of each round that reached one. Many do not: a round where
+your suite stopped acting records what it did and then stops, and a round that
+never acted at all carries only the environment probe. That is not a redaction,
+it is what the run produced. What the sandbox computed in order to score you is
 not. A vendor who learns that a click landed before hydration fixes their agent,
 which is the behaviour this benchmark wants; a vendor who learns which control
 was the correct one can hard-code it and stop perceiving the page, which is the
@@ -181,6 +187,32 @@ Neither withholding makes the set safe from study, and this document will not
 pretend otherwise. A scoped release still narrows the class mapping for the
 scenarios it covers. What the scoping changes is the cost: naming a scenario
 buys that scenario, rather than one dispute buying all fifty.
+
+**After publication, the telemetry for what went wrong.** A dispute is for
+claiming a result is wrong; this is for fixing what it says. Once your quarter's
+board is public, the telemetry for every scenario where your run recorded a False
+Heal, an intent violation or an integrity violation is available to you — on the
+same terms, and with the same two withholdings, as a dispute. **Ask and it is
+yours.** The terms are identical for every framework scored that quarter, and
+they are written here rather than settled case by case, so that an entrant who
+asks and an entrant who asks later are answered the same way. What is not on
+offer is a better deal for asking first, or for asking more persuasively.
+
+It is scoped to those scenarios because that is what there is to remediate. A
+scenario your suite reported honestly holds nothing you need in order to improve,
+and releasing it would narrow the set for no one's benefit. An entry with none of
+the three receives nothing, which is the right amount.
+
+**This is deliberately a poor way to map the scenario set, and the trade is worth
+naming rather than hiding.** The scenarios you can see are the ones you got wrong,
+so acquiring more of them means publishing a worse result — False Heals are the
+headline statistic on your own row, and they are counted in public. A framework
+that failed everything in order to see everything would have bought the traces
+with the number it is ranked on.
+
+One request per entry per quarter, and it is for your own use. Publishing it is
+publishing the scenario set, which ends the benchmark for everyone, including
+you.
 
 **Void runs.** A run that does not execute all fifty scenarios is not scored. It
 is reported as incomplete, without a number, because a partial run does not
