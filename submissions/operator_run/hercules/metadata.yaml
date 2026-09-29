@@ -1,0 +1,81 @@
+framework: hercules
+# The PyPI release this entry installs, resolved rather than a range. It is what
+# `pip install testzeus-hercules` gives anyone today; the vendor's own
+# `testzeus/hercules:latest` image is still on 0.1.2 and is deliberately not used.
+version: '1.0.2'
+quarter: 2026-Q4
+submitter: operator
+contact: you@example.com
+submission_date: 2026-09-27
+
+scope: full
+
+tests:
+  glob: features/prism-*.feature
+
+# `setup` downloads a browser because it has to. Hercules 1.0.2 pins
+# `playwright<=1.49.0`, while the container image is Playwright v1.60.0 carrying
+# chromium-1223 — a build its playwright does not recognise, so the preinstalled
+# browsers are unusable and it fetches its own 1.49-era Chromium. That is a
+# property of the framework rather than of this harness: the row discloses the
+# framework version, and entries already differ in what they drive (Kane drives
+# real Chrome, Momentic its own browsers).
+#
+# `setup` builds psutil from source, which is not a preference. Hercules 1.0.2
+# pins `psutil<6,>=5.9.0` and no psutil 5.9.x publishes an aarch64 wheel, so on
+# arm64 pip has no binary to install and needs a compiler. Every other operator
+# entry for this round ran arm64-native on the same machine, and running this one
+# emulated under linux/amd64 to get x86_64 wheels would put the agent under QEMU
+# while the sandbox stayed native — which distorts precisely the timing PRISM
+# grades and would make the row non-comparable with its own quarter.
+#
+# Every setting that decides how honest this run is lives in the command rather
+# than a gitignored .env, so a reviewer reads it in the entry:
+#
+#   AUTO_MODE=1        without it Hercules treats the run as manual and asks for
+#                      an email address mid-run, which stalls the round instead
+#                      of failing it. Their own container image sets this; we are
+#                      not using their image, so it is set here.
+#   ENABLE_TELEMETRY=0 defaults to "1". The analytics are PostHog, gated at three
+#                      call sites in testzeus_hercules/telemetry.py.
+#   RECORD_VIDEO / TAKE_SCREENSHOTS / CAPTURE_NETWORK all default on. Beyond the
+#                      disk cost over 300 runs, capture overhead lands on the
+#                      timing-sensitive scenarios.
+#   BROWSER_RESOLUTION is the graded viewport directly — headless Chromium, so no
+#                      browser chrome is subtracted from it.
+#   LLM_MODEL_*        the model is the operator's choice, pinned and disclosed.
+#                      gpt-4o is what the project's own README examples use.
+run:
+  setup: apt-get update && apt-get install -y --no-install-recommends gcc python3-dev
+    && pip install --break-system-packages --root-user-action=ignore testzeus-hercules==1.0.2
+    && python3 -m playwright install chromium
+  command: >-
+    AUTO_MODE=1
+    ENABLE_TELEMETRY=0
+    HEADLESS=true
+    BROWSER_TYPE=chromium
+    BROWSER_RESOLUTION=1280,720
+    RECORD_VIDEO=false
+    TAKE_SCREENSHOTS=false
+    CAPTURE_NETWORK=false
+    LLM_MODEL_NAME=openai/gpt-4o
+    LLM_MODEL_API_TYPE=openai
+    LLM_MODEL_BASE_URL=https://openrouter.ai/api/v1
+    python3 run_prism.py
+  results: results/junit.xml
+
+# openrouter.ai serves the model. The three install hosts are setup-time only.
+# `ports.ubuntu.com` rather than `archive.ubuntu.com` because this is an arm64
+# image and Ubuntu serves non-x86 architectures from the ports mirror — an
+# allowlist naming the wrong one would be inaccurate rather than merely untidy.
+#
+# The suite reaches the sandbox through `{{BASE_URL}}`, resolved per run from
+# PRISM_SANDBOX_URL into a staged copy, so no address is written into the entry.
+network:
+  allowlist:
+    - openrouter.ai
+    - pypi.org
+    - files.pythonhosted.org
+    - ports.ubuntu.com
+    - cdn.playwright.dev
+    - playwright.download.prss.microsoft.com
