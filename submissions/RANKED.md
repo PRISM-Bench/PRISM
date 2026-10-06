@@ -233,7 +233,19 @@ that allowlist is reviewed at intake.
 
 ## Cadence
 
-Ranked runs happen quarterly. The archive you uploaded, addressed by its
+**Results publish on the first day of each quarter** — 1 January, 1 April,
+1 July and 1 October. The date is fixed: it does not move for a late
+submission or a repeated run. **Submissions close on the fifteenth of the
+month before** — 15 December, 15 March, 15 June and 15 September. A
+submission received after the close is scored in the next quarter, not in a
+delayed version of this one. The gap gives the operator time to run all 50
+scenarios against that quarter's held-out seeds and then hold results with
+you for five business days before publication.
+
+**This cadence applies from 2027-Q1.** The inaugural 2026-Q4 round was run to
+dates agreed directly with each entrant.
+
+The archive you uploaded, addressed by its
 SHA-256, is the record of what was submitted for that round: it is retained
 privately and indefinitely, and the published result carries that hash. Once a
 quarter's ranked run has scored a snapshot, that snapshot is immutable — a
@@ -242,10 +254,9 @@ correction is a new submission in the next round, never an edit to a scored one.
 **An operator-run row yields to your own entry.** Until a framework submits, the
 operator may author and run an entry for it so the board is not empty; those rows
 are labelled as operator-authored, because who wrote the tests moves the number.
-If your entry arrives before that quarter is published, it replaces the
-operator-run row for your framework. If it arrives after, the quarter's snapshot
-is already immutable — the operator-run row stands for that quarter and your
-entry scores at the next boundary.
+If your entry arrives before that quarter's submissions close, it replaces the
+operator-run row for your framework. If it arrives after, the operator-run row
+stands for that quarter and your entry scores at the next boundary.
 
 **The scenario set is frozen within a quarter.** A ranked round scores the set as
 it stood when that round opened, so a scenario accepted mid-quarter cannot move
