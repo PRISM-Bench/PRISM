@@ -57,7 +57,6 @@ PRISM is **report-only**: it publishes the RPS and the vector and assigns no tie
 - `/evaluators/scoring`: Python logic that computes the **RPS Score** from sandbox telemetry.
 - `/submissions`: The submission contract, how ranked runs work, and the maintainers' reference entry. Vendor entries arrive privately and are not published here (see `submissions/README.md`).
 - `/docs`: The **PRISM White Paper**, the methodology, the generated benchmark taxonomy (`docs/benchmark.md`), and one settled-state screenshot per scenario (`docs/screenshots/`).
-  - Proposed future extensions: [`docs/adaptive-scenario-proposals.md`](docs/adaptive-scenario-proposals.md) documents ten adaptive multi-step scenario candidates. These are proposals only and are not part of the active ranked set.
 
 ### What this repository is, and is not
 
